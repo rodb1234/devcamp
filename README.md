@@ -1,24 +1,12 @@
-# README
+# Devcamp Aplicação Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ > Esta é uma aplicação Ruby on Rails feita para que usuários criem seus próprios portfolios.
 
-Things you may want to cover:
+ ### Funcionalidades
 
-* Ruby version
+ - Chat em tempo real
+ - Blog
+ - Portfolio
+ - Interface arrastar e soltar arquivos
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 
