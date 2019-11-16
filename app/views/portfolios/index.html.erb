@@ -6,7 +6,7 @@
 
 
     <% @portfolios.each do |portf| %>
-        <p><%= link_to portf.title, portfolio_path(portf) %> -
+        <p><%= link_to portf.title, portfolio_show_path(portf) %> -
         <p><%= portf.subtitle %></p>
         <p><%= portf.body %></p>
         <%= link_to 'Edit', edit_portfolio_path(portf) %> - 
