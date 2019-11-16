@@ -2,13 +2,15 @@
 
 <h1>Portfolios</h1>
 
+<%= link_to "Criar novo Portfolio", new_portfolio_path %>
+
+
     <% @portfolios.each do |portf| %>
-        <p><%= portf.title %></p>
+        <p><%= link_to portf.title, portfolio_path(portf) %> -
         <p><%= portf.subtitle %></p>
         <p><%= portf.body %></p>
-        <p><%= link_to 'Show', portf %> -
-        <%= link_to 'Edit', edit_blog_path(portf) %> - 
-        <%= link_to 'Destroy', portf, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <%= link_to 'Edit', edit_portfolio_path(portf) %> - 
+        <%= link_to 'Deletar Portfolio', portfolio_path(portf), method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <%= image_tag portf.thumb_image unless portf.thumb_image.nil?%>
     <% end %>
 
