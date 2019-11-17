@@ -19,7 +19,9 @@ ActiveRecord::Schema.define(version: 2019_11_17_005756) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.integer "status", default: 0
+    t.bigint "topic_id", null: false
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
+    t.index ["topic_id"], name: "index_blogs_on_topic_id"
   end
 
   create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
