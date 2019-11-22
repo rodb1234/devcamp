@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
   include DeviseWhitelist
+  include SetSource
+  #Alterando o metodo padrao do devise para ter usuario sem ter usuario logado
+  include CurrentUserConcern
 
-  before_action :set_source
-
-  def set_source
-    session[:source] = params[:q] if params[:q]
-  end
 end
