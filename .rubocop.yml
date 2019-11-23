@@ -1,0 +1,110 @@
+AllCops:
+  TargetRubyVersion: 2.6.3
+  Exclude:
+    - '**/db/**/*'
+    - '**/Gemfile'
+    - '**/Gemfile.lock'
+    - '**/Rakefile'
+    - '**/rails'
+    - '**/lib/**/*'
+    - '**/bin/*'
+    - '**/migrate/**/*'
+    - '**/vendor/**/*'
+
+Naming/UncommunicativeMethodParamName:
+  MinNameLength: 1
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Layout/IndentFirstArgument:
+  Enabled: false
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/AlignParameters:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+  CountComments: false
+  Max: 150
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 250
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+  CountComments: false
+  Max: 50
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/EvalWithLocation:
+  Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false

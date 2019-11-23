@@ -5,11 +5,14 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @page_title = 'My Portfolio Blog'
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title = @blog.title
+    @seo_keyword = @blog.title
   end
 
   # GET /blogs/new
@@ -63,14 +66,15 @@ class BlogsController < ApplicationController
 
   def toggle_status
     if @blog.draft?
-      @blog.published! 
+      @blog.published!
     elsif @blog.published?
-      @blog.draft! 
+      @blog.draft!
     end
     redirect_to blogs_url, notice: 'Status has been updated.'
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.friendly.find(params[:id])

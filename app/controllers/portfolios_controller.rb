@@ -13,8 +13,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-	@portfolio = Portfolio.new(portfolio_params)
-
+    @portfolio = Portfolio.new(portfolio_params)
     respond_to do |format|
       if @portfolio.save
         format.html { redirect_to portfolios_path, notice: 'Seu Portfolio foi criado' }
@@ -25,7 +24,7 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-  	@portfolio = Portfolio.find(params[:id])
+    @portfolio = Portfolio.find(params[:id])
 
     respond_to do |format|
       if @portfolio.update(portfolio_params)
@@ -37,21 +36,21 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-  	@portfolio = Portfolio.find(params[:id])
+    @portfolio = Portfolio.find(params[:id])
   end
 
   def show
-  	@portfolio = Portfolio.find(params[:id])
+    @portfolio = Portfolio.find(params[:id])
   end
 
   def destroy
-  	#Procura o ID do portfolio para destruir
-  	@portfolio = Portfolio.find(params[:id])
+    # Procura o ID do portfolio para destruir
+    @portfolio = Portfolio.find(params[:id])
 
-  	#Destroi/deleta o registro
-		@portfolio.destroy
+    # Destroi/deleta o registro
+    @portfolio.destroy
 
-		#Redireciona para outra pagina
+    # Redireciona para outra pagina
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Blog was removed.' }
     end
@@ -59,11 +58,11 @@ class PortfoliosController < ApplicationController
 
   private
 
-  def portfolio_params
-    params.require(:portfolio).permit(:title,
-                                      :body,
-                                      :subtitle,
-                                      technologies_attributes: [:name]
-                                    )
-  end
+    def portfolio_params
+      params.require(:portfolio).permit(:title,
+                                        :body,
+                                        :subtitle,
+                                        technologies_attributes: [:name]
+                                       )
+    end
 end
