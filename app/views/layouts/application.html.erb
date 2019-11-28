@@ -6,22 +6,23 @@
 
     <meta name="keywords" content="<%= @seo_keywords %> ; charset=UTF-8" />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'true' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+ <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <%= render "shared/nav", location: 'top' %>
+          <%= render "shared/application_nav" %>
+          <%= yield %>
 
-    <%= login_helper %>
+          <%= render "shared/application_footer" %>
+          <%= source_helper %>
 
-    <%= yield %>
-
-    <%= source_helper %>
-
-    <%= @copyright %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

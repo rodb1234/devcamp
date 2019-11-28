@@ -1,16 +1,7 @@
-<h1>Olá, <%= current_user.first_name %> </h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<h2>Blogs cadastrados</h2>
-<% @posts.each do |post| %>
-  <li><%= post.title %></li>
-<% end %>
-
-<h2>Skills cadastradas</h2>
-<% @skills.each do |skill| %>
-  <li><%= skill.title %></li>
-<% end %>
-
-<hr>
-
-<%= sample_helper %>
+<div class="inner cover">
+  <h1 class="cover-heading">Cover your page.</h1>
+  <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+  <p class="lead">
+    <%= link_to 'Sobre', about_path, class: 'btn btn-lg btn-secondary' %>
+  </p>
+</div>

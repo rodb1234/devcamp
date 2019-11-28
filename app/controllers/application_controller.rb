@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   before_action :set_copyright
 
   def set_copyright
-   #  @copyright = ViewToolGemRodrigo::Renderer.copyright('Rodrigo Castro', 'Todos direitos reservados')
+    @copyright = copyright('Rodrigo Castro', 'Todos direitos reservados')
+  end
+
+  def copyright(name, msg)
+    "&copy; #{Time.now.year} | <b>#{name}</b> - #{msg}".html_safe
   end
 end
