@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <p id="notice"><%= notice %></p>
 
-<h1>Portfolios</h1>
+     <!-- <%= link_to "Criar novo Portfolio", new_portfolio_path %> -->
 
-<%= link_to "Criar novo Portfolio", new_portfolio_path %>
-
-<%= render partial: 'portfolio',  collection: @portfolios %>
-
-<br>
+      <%= render partial: 'portfolio',  collection: @portfolios %>
+    </div>
+  </div>
+</div>
