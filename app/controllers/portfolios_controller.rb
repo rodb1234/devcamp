@@ -1,8 +1,9 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
+
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.by_position
   end
 
   def angular
@@ -50,6 +51,15 @@ class PortfoliosController < ApplicationController
     # Redireciona para outra pagina
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Blog was removed.' }
+    end
+  end
+
+  def sort
+    params[:span].each_with_index do |id, index|
+    Span.where(id: id).update_all(position: index + 1)
+    end
+    respond_to do |format|
+      format.js
     end
   end
 

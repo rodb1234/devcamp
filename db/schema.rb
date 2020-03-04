@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_24_203047) do
+ActiveRecord::Schema.define(version: 2020_02_04_163307) do
+
+  create_table "aas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "teste"
+    t.bigint "blog_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blog_id"], name: "index_aas_on_blog_id"
+  end
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_11_24_203047) do
     t.text "thumb_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "position"
   end
 
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -80,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_11_24_203047) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "aas", "blogs"
   add_foreign_key "blogs", "topics"
   add_foreign_key "technologies", "portfolios"
 end

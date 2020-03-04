@@ -10,6 +10,19 @@ default: &default
   webpack_compile_output: true
 
   # Additional paths webpack should lookup modules
+  module: {
+  rules: [{
+    test: require.resolve('jquery'),
+    use: [{
+        loader: 'expose-loader',
+        options: 'jQuery'
+    },{
+        loader: 'expose-loader',
+        options: '$'
+    }]
+  }]
+}
+
   # ['app/assets', 'engine/foo/app/assets']
   resolved_paths: []
 
